@@ -1,5 +1,6 @@
 # Tienda_Online
 DESCRIPCION DEL PROYECTO Y DIAGRAMA
+
 El codigo tiene la finalidad de administrar una tienda en linea por medio de ciertas clases que haran posible su correcto funcionamiento
 
 En el diagrama se describen las siguientes clases:
