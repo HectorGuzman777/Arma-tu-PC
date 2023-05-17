@@ -26,4 +26,5 @@ Representa las transacciones realizadas por los clientes
 
 
 FORMA EN LA QUE EL CODIGO PODRIA FALLAR
+
 Para que el codigo marque algun error seria tratar de hacer una compra sin ningun producto en el carrito
