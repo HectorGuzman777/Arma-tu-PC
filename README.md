@@ -28,6 +28,11 @@ VENTA
 Representa las transacciones realizadas por los clientes
 
 
+
 FORMA EN LA QUE EL CODIGO PODRIA FALLAR
 
-Para que el codigo marque algun error seria tratar de hacer una compra sin ningun producto en el carrito
+- Hacer una compra sin articulos en el carrito
+
+- Escribiendo otro caracter que no sea el de los articulos
+
+- Pagar en efectivo
