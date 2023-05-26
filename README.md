@@ -1,38 +1,30 @@
-# Tienda_Online
+# Arma tu PC
 DESCRIPCION DEL PROYECTO Y DIAGRAMA
 
-La problematica a resolver es crear una tienda virtual y para esto se necesita un codigo que automatize sus funcionamientos 
+Mucha gente quiere armar una pc pero priemro quieren saber un costo aproximado para poder ahorrar esa cantidad por lo que el codigo se encargará de mostrarle al usuario componentes desde gama baja hasta gama alta para que dependiendo de lo que quiera el usuario el programa le dará un costo aproximado de lo que le saldria su PC.
 
-El codigo tiene la finalidad de administrar una tienda en linea por medio de ciertas clases que haran posible su correcto funcionamiento
 
 En el diagrama se describen las siguientes clases:
 
-TIENDA
+CARRITO
 
-Esta clase administra todos los producto de forma que se pueden agregar o quitar, al igual que los clientes se pueden ir agregando o eliminando
-
-ADMINISTRADOR
-
-se encargara de generar un reporte de ventas
-
-CLIENTE
-
-se encarga de agregar o quitar algun producto del carrito de compras y realizar el pago
+Esta clase se encarga de ir juntando todo lo que el usuario selccione para despues desplegar la suma total de la cuenta
 
 PRODUCTO
 
-Administrara los productos guardando sus ID, nombre, precio y cantidad disponible.
+Esta clase mostrará todos los productos disponibles para que el cliente las seleccione
 
-VENTA
+COMPONENTE
 
-Representa las transacciones realizadas por los clientes
+Esta clase almacena los componentes junto con la clase producto
+
+Tendrian una herencia las clases GPU, CPU, Motherboard, FuentePoder, disipador, RAM, Monitor, Teclado, Mouse y Gabinete
 
 
 
-FORMA EN LA QUE EL CODIGO PODRIA FALLAR
 
-- Hacer una compra sin articulos en el carrito
+Especificaciones:
 
-- Escribiendo otro caracter que no sea el de los articulos
+El codigo genera una cuenta del total de los componentes
 
-- Pagar en efectivo
+No se puede elegir algo que no aparezca en el menu
