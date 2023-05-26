@@ -23,8 +23,10 @@ Tendrian una herencia las clases GPU, CPU, Motherboard, FuentePoder, disipador, 
 
 
 
-Especificaciones:
+ESPECIFICACIONES
 
 El codigo genera una cuenta del total de los componentes
 
 No se puede elegir algo que no aparezca en el menu
+
+No se puede remover algo de carrito
