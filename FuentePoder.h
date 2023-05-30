@@ -1,5 +1,6 @@
 #ifndef FUENTEPODER_H
 #define FUENTEPODER_H
+#include <iostream>
 
 class FuentePoder : public Producto {
 public:
