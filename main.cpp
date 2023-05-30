@@ -1,19 +1,19 @@
 #include <iostream>
 #include <vector>
-#include <Producto.h>
-#include <GPU.h>
-#include <CPU.h>
-#include <Gabienete.h>
-#include <Motherboard.h>
-#include <Disipador.h>
-#include <FuentePoder.h>
-#include <RAM.h>
-#include <Periferico.h>
-#include <Monitor.h>
-#include <Teclado.h>
-#include <Mouse.h>
-#include <Carrito.h>
-#include <Tienda.h>
+#include "Producto.h"
+#include "GPU.h"
+#include "CPU.h"
+#include "Gabinete.h"
+#include "Motherboard.h"
+#include "Disipador.h"
+#include "FuentePoder.h"
+#include "RAM.h"
+#include "Periferico.h"
+#include "Monitor.h"
+#include "Teclado.h"
+#include "Mouse.h"
+#include "Carrito.h"
+#include "Tienda.h"
 
 using namespace std;
 
@@ -24,7 +24,7 @@ int main() {
     int opcion;
     do {
         tienda.mostrarMenu();
-        cout << "Ingrese una opción: ";
+        cout << "Ingrese una opcion: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -290,5 +290,7 @@ case 10: {
 
     return 0;
 }
+
+
 
 
