@@ -1,5 +1,6 @@
 #ifndef CARRITO_H
 #define CARRITO_H
+#include <iostream>
 
 class Carrito {
 private:
