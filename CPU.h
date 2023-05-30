@@ -1,5 +1,7 @@
 #ifndef CPU_H
 #define CPU_H
+#include <iostream>
+
 
 class CPU : public Producto {
 public:
