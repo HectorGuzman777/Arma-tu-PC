@@ -1,5 +1,6 @@
 #ifndef PERIFERICO_H
 #define PERIFERICO_H
+#include <iostream>
 
 class Periferico : public Producto {
 public:
