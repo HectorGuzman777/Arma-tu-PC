@@ -1,5 +1,6 @@
 #ifndef MOTHERBOARD_H
 #define MOTHERBOARD_H
+#include <iostream>
 
 class Motherboard : public Producto {
 public:
