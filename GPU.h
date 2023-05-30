@@ -1,5 +1,6 @@
 #ifndef GPU_H
 #define GPU_H
+#include <iostream>
 
 class GPU : public Producto {
 public:
