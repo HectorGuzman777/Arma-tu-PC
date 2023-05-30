@@ -1,5 +1,6 @@
 #ifndef MOUSE_H
 #define MOUSE_H
+#include <iostream>
 
 class Mouse : public Periferico {
 public:
