@@ -1,5 +1,6 @@
 #ifndef GABINETE_H
 #define GABINETE_H
+#include <iostream>
 
 class Gabinete : public Producto {
 public:
