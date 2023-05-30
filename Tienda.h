@@ -1,11 +1,11 @@
 #ifndef TIENDA_H
 #define TIENDA_H
-
+#include <iostream>
 
 class Tienda {
 public:
     void mostrarMenu() {
-        cout << "==== Menú ====" << endl;
+        cout << "==== Menu ====" << endl;
         cout << "1. Comprar GPU" << endl;
         cout << "2. Comprar CPU" << endl;
         cout << "3. Comprar Gabinete" << endl;
