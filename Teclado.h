@@ -1,5 +1,6 @@
 #ifndef TECLADO_H
 #define TECLADO_H
+#include <iostream>
 
 class Teclado : public Periferico {
 public:
