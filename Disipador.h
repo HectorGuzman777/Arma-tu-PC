@@ -1,5 +1,6 @@
 #ifndef DISIPADOR_H
 #define DISIPADOR_H
+#include <iostream>
 
 class Disipador : public Producto {
 public:
