@@ -1,5 +1,6 @@
 #ifndef RAM_H
 #define RAM_H
+#include <iostream>
 
 class RAM : public Producto {
 public:
