@@ -2,6 +2,8 @@
 #define TIENDA_H
 #include <iostream>
 
+using namespace std;
+
 class Tienda {
 public:
     void mostrarMenu() {
