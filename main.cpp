@@ -18,7 +18,7 @@
 using namespace std;
 
 int main() {
-    Tienda tienda;
+    Tienda tienda; //se mandan a llamar las clases tienda y carrito
     Carrito carrito;  //Menú de selección para que el usuario seleccione los productos que desee.
     
     int opcion;
