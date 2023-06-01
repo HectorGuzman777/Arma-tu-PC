@@ -19,8 +19,8 @@ using namespace std;
 
 int main() {
     Tienda tienda;
-    Carrito carrito;
-
+    Carrito carrito;  //Menú de selección para que el usuario seleccione los productos que desee.
+    
     int opcion;
     do {
         tienda.mostrarMenu();
@@ -47,7 +47,7 @@ int main() {
                         carrito.agregarProducto(new GPU("RTX 3090", 18000));
                         break;
                     default:
-                        cout << "Opción inválida." << endl;
+                        cout << "Opcion invalida." << endl; //mensaje de error cuando se escribe otro numero que no esté en el menu
                         break;
                 }
                 break;
@@ -276,7 +276,7 @@ case 10: {
     break;
 }
 
-            // Resto de casos para los otros productos y periféricos...
+            // FInalización de compra
             case 0:
                 cout << "Compra finalizada." << endl;
                 break;
@@ -284,13 +284,11 @@ case 10: {
                 cout << "Opción inválida." << endl;
                 break;
         }
-    } while (opcion != 0);
+    } while (opcion != 0); //Mientras los numeros seleccionados sean diferentes a 0 en el menu principal, el codigo seguirá corriendo
 
-    carrito.mostrarCarrito();
+    carrito.mostrarCarrito(); //Muestra el resultado final del carrito con el costo total
 
     return 0;
 }
-
-
 
 
