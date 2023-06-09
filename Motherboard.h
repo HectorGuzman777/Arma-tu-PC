@@ -2,6 +2,7 @@
 #define MOTHERBOARD_H
 #include <iostream>
 
+
 class Motherboard : public Producto {
 public:
     Motherboard(string _nombre, int _precio) : Producto(_nombre, _precio) {}
