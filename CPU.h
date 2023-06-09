@@ -4,9 +4,9 @@
 
 class CPU : public Producto {
 public:
-    CPU(string _nombre, int _precio) : Producto(_nombre, _precio) {} //Constructor de CPU y herencia de la clase Producto para su nombre y precio
+    CPU(string _nombre, int _precio) : Producto(_nombre, _precio) {}
 
-    void mostrarInformacion() { //Muestra la información del producto 
+    void mostrarInformacion() {
         cout << "CPU: " << nombre << endl;
         cout << "Precio: $" << precio << endl;
     }
