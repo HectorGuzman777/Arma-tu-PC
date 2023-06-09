@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <typeinfo>
 #include "Producto.h"
 #include "GPU.h"
 #include "CPU.h"
@@ -12,284 +13,171 @@
 #include "Monitor.h"
 #include "Teclado.h"
 #include "Mouse.h"
-#include "Carrito.h"
-#include "Tienda.h"
+
+
 
 using namespace std;
 
 int main() {
-    Tienda tienda; //se mandan a llamar las clases tienda y carrito
-    Carrito carrito;  //Menú de selección para que el usuario seleccione los productos que desee.
-    
+    vector<Producto*> productos;
+    vector<Producto*> carrito;
+
+    // Agregar productos a la lista de productos
+    productos.push_back(new GPU("RTX 3060", 10000));
+    productos.push_back(new GPU("RTX 3080", 12000));
+    productos.push_back(new GPU("RTX 3090", 18000));
+    productos.push_back(new CPU("INTEL I7", 5500));
+    productos.push_back(new CPU("RYZEN 7", 5200));
+    productos.push_back(new CPU("INTEL I9", 6200));
+    productos.push_back(new Gabinete("RGB", 890));
+    productos.push_back(new Gabinete("Básico", 420));
+    productos.push_back(new Gabinete("Moderno", 500));
+    productos.push_back(new Motherboard("ROG Strix", 4000));
+    productos.push_back(new Motherboard("Aorus", 2500));
+    productos.push_back(new Motherboard("Gigabyte", 2000));
+    productos.push_back(new Disipador("RGB", 600));
+    productos.push_back(new Disipador("Cool Master", 560));
+    productos.push_back(new Disipador("Aerocool", 480));
+    productos.push_back(new FuentePoder("750W", 260));
+    productos.push_back(new FuentePoder("800W", 280));
+    productos.push_back(new FuentePoder("850W", 300));
+    productos.push_back(new RAM("16GB", 200));
+    productos.push_back(new RAM("32GB", 350));
+    productos.push_back(new RAM("64GB", 500));
+    productos.push_back(new Monitor("120Hz", 1400));
+    productos.push_back(new Monitor("144Hz", 2500));
+    productos.push_back(new Monitor("360Hz", 3000));
+    productos.push_back(new Teclado("Mecánico", 600));
+    productos.push_back(new Teclado("Membrana", 450));
+    productos.push_back(new Teclado("Estándar", 200));
+    productos.push_back(new Mouse("Logitech G502", 1200));
+    productos.push_back(new Mouse("Deathhadder Elite", 1000));
+    productos.push_back(new Mouse("Cougar", 850));
+
     int opcion;
-    do {
-        tienda.mostrarMenu();
-        cout << "Ingrese una opcion: ";
+    int costoTotal = 0;
+
+    // Mostrar menú
+    while (true) {
+        cout << "===== MENU =====" << endl;
+        cout << "1. Armar PC" << endl;
+        cout << "2. Ver carrito" << endl;
+        cout << "3. Pagar" << endl;
+        cout << "4. Salir" << endl;
+        cout << "Ingrese una opción: ";
         cin >> opcion;
 
         switch (opcion) {
             case 1: {
-                cout << "==== GPUs ====" << endl;
-                cout << "1. RTX 3060 ($10,000)" << endl;
-                cout << "2. RTX 3080 ($12,000)" << endl;
-                cout << "3. RTX 3090 ($18,000)" << endl;
-                int gpuOpcion;
-                cout << "Ingrese una opcion: ";
-                cin >> gpuOpcion;
-                switch (gpuOpcion) {
-                    case 1:
-                        carrito.agregarProducto(new GPU("RTX 3060", 10000));
-                        break;
-                    case 2:
-                        carrito.agregarProducto(new GPU("RTX 3080", 12000));
-                        break;
-                    case 3:
-                        carrito.agregarProducto(new GPU("RTX 3090", 18000));
-                        break;
-                    default:
-                        cout << "Opcion invalida." << endl; //mensaje de error cuando se escribe otro numero que no esté en el menu
-                        break;
+                int tipoComponente;
+                cout << "Seleccione el tipo de componente:" << endl;
+                cout << "1. GPU" << endl;
+                cout << "2. CPU" << endl;
+                cout << "3. Gabinete" << endl;
+                cout << "4. Motherboard" << endl;
+                cout << "5. Disipador" << endl;
+                cout << "6. Fuente de poder" << endl;
+                cout << "7. RAM" << endl;
+                cout << "8. Monitor" << endl;
+                cout << "9. Teclado" << endl;
+                cout << "10. Mouse" << endl;
+                cout << "Ingrese una opción: ";
+                cin >> tipoComponente;
+
+                if (tipoComponente < 1 || tipoComponente > 10) {
+                    cout << "Opción inválida. Por favor, seleccione una opción válida." << endl;
+                    break;
                 }
+
+                int opcionComponente;
+                cout << "Seleccione el componente:" << endl;
+                for (int i = 0; i < productos.size(); i++) {
+                    if (typeid(*productos[i]) == typeid(GPU) && tipoComponente == 1) {
+                        cout << i + 1 << ". ";
+                        productos[i]->mostrarInformacion();
+                    } else if (typeid(*productos[i]) == typeid(CPU) && tipoComponente == 2) {
+                        cout << i + 1 << ". ";
+                        productos[i]->mostrarInformacion();
+                    } else if (typeid(*productos[i]) == typeid(Gabinete) && tipoComponente == 3) {
+                        cout << i + 1 << ". ";
+                        productos[i]->mostrarInformacion();
+                    } else if (typeid(*productos[i]) == typeid(Motherboard) && tipoComponente == 4) {
+                        cout << i + 1 << ". ";
+                        productos[i]->mostrarInformacion();
+                    } else if (typeid(*productos[i]) == typeid(Disipador) && tipoComponente == 5) {
+                        cout << i + 1 << ". ";
+                        productos[i]->mostrarInformacion();
+                    } else if (typeid(*productos[i]) == typeid(FuentePoder) && tipoComponente == 6) {
+                        cout << i + 1 << ". ";
+                        productos[i]->mostrarInformacion();
+                    } else if (typeid(*productos[i]) == typeid(RAM) && tipoComponente == 7) {
+                        cout << i + 1 << ". ";
+                        productos[i]->mostrarInformacion();
+                    } else if (typeid(*productos[i]) == typeid(Monitor) && tipoComponente == 8) {
+                        cout << i + 1 << ". ";
+                        productos[i]->mostrarInformacion();
+                    } else if (typeid(*productos[i]) == typeid(Teclado) && tipoComponente == 9) {
+                        cout << i + 1 << ". ";
+                        productos[i]->mostrarInformacion();
+                    } else if (typeid(*productos[i]) == typeid(Mouse) && tipoComponente == 10) {
+                        cout << i + 1 << ". ";
+                        productos[i]->mostrarInformacion();
+                    }
+                }
+
+                cout << "Ingrese una opción: ";
+                cin >> opcionComponente;
+
+                if (opcionComponente < 1 || opcionComponente > productos.size()) {
+                    cout << "Opción inválida. Por favor, seleccione una opción válida." << endl;
+                    break;
+                }
+
+                Producto* componenteElegido = productos[opcionComponente - 1];
+                carrito.push_back(componenteElegido);
+                costoTotal += componenteElegido->getPrecio();
+
+                cout << "El componente ha sido agregado al carrito." << endl;
                 break;
             }
             case 2: {
-                cout << "==== CPUs ====" << endl;
-                cout << "1. INTEL I7 ($5,500)" << endl;
-                cout << "2. RYZEN 7 ($5,200)" << endl;
-                cout << "3. INTEL I9 ($6,200)" << endl;
-                int cpuOpcion;
-                cout << "Ingrese una opcion: ";
-                cin >> cpuOpcion;
-                switch (cpuOpcion) {
-                    case 1:
-                        carrito.agregarProducto(new CPU("INTEL I7", 5500));
-                        break;
-                    case 2:
-                        carrito.agregarProducto(new CPU("RYZEN 7", 5200));
-                        break;
-                    case 3:
-                        carrito.agregarProducto(new CPU("INTEL I9", 6200));
-                        break;
-                    default:
-                        cout << "Opción invalida." << endl;
-                        break;
+                cout << "===== CARRITO =====" << endl;
+                if (carrito.empty()) {
+                    cout << "El carrito está vacío." << endl;
+                } else {
+                    for (int i = 0; i < carrito.size(); i++) {
+                        cout << i + 1 << ". ";
+                        carrito[i]->mostrarInformacion();
+                    }
+                    cout << "Costo total: $" << costoTotal << endl;
                 }
                 break;
             }
             case 3: {
-    cout << "==== Gabinetes ====" << endl;
-    cout << "1. RGB ($890)" << endl;
-    cout << "2. Basico ($420)" << endl;
-    cout << "3. Moderno ($500)" << endl;
-    int gabineteOpcion;
-    cout << "Ingrese una opcion: ";
-    cin >> gabineteOpcion;
-    switch (gabineteOpcion) {
-        case 1:
-            carrito.agregarProducto(new Gabinete("RGB", 890));
-            break;
-        case 2:
-            carrito.agregarProducto(new Gabinete("Basico", 420));
-            break;
-        case 3:
-            carrito.agregarProducto(new Gabinete("Moderno", 500));
-            break;
-        default:
-            cout << "Opcion invalida." << endl;
-            break;
-    }
-    break;
-}
-
-case 4: {
-    cout << "==== Motherboards ====" << endl;
-    cout << "1. ROG Strix ($4,000)" << endl;
-    cout << "2. Aorus ($2,500)" << endl;
-    cout << "3. Gigabyte ($2,000)" << endl;
-    int motherboardOpcion;
-    cout << "Ingrese una opción: ";
-    cin >> motherboardOpcion;
-    switch (motherboardOpcion) {
-        case 1:
-            carrito.agregarProducto(new Motherboard("ROG Strix", 4000));
-            break;
-        case 2:
-            carrito.agregarProducto(new Motherboard("Aorus", 2500));
-            break;
-        case 3:
-            carrito.agregarProducto(new Motherboard("Gigabyte", 2000));
-            break;
-        default:
-            cout << "Opcion invalida." << endl;
-            break;
-    }
-    break;
-}
-
-case 5: {
-    cout << "==== Disipadores ====" << endl;
-    cout << "1. RGB ($600)" << endl;
-    cout << "2. Cool Master ($560)" << endl;
-    cout << "3. Aerocool ($480)" << endl;
-    int disipadorOpcion;
-    cout << "Ingrese una opcion: ";
-    cin >> disipadorOpcion;
-    switch (disipadorOpcion) {
-        case 1:
-            carrito.agregarProducto(new Disipador("RGB", 600));
-            break;
-        case 2:
-            carrito.agregarProducto(new Disipador("Cool Master", 560));
-            break;
-        case 3:
-            carrito.agregarProducto(new Disipador("Aerocool", 480));
-            break;
-        default:
-            cout << "Opcion invalida." << endl;
-            break;
-    }
-    break;
-}
-
-case 6: {
-    cout << "==== Fuentes de poder ====" << endl;
-    cout << "1. 750W ($260)" << endl;
-    cout << "2. 800W ($280)" << endl;
-    cout << "3. 850W ($300)" << endl;
-    int fuentePoderOpcion;
-    cout << "Ingrese una opcion: ";
-    cin >> fuentePoderOpcion;
-    switch (fuentePoderOpcion) {
-        case 1:
-            carrito.agregarProducto(new FuentePoder("750W", 260));
-            break;
-        case 2:
-            carrito.agregarProducto(new FuentePoder("800W", 280));
-            break;
-        case 3:
-            carrito.agregarProducto(new FuentePoder("850W", 300));
-            break;
-        default:
-            cout << "Opcion invalida." << endl;
-            break;
-    }
-    break;
-}
-
-case 7: {
-    cout << "==== RAMs ====" << endl;
-    cout << "1. 16GB ($200)" << endl;
-    cout << "2. 32GB ($350)" << endl;
-    cout << "3. 64GB ($500)" << endl;
-    int ramOpcion;
-    cout << "Ingrese una opcion: ";
-    cin >> ramOpcion;
-    switch (ramOpcion) {
-        case 1:
-            carrito.agregarProducto(new RAM("16GB", 200));
-            break;
-        case 2:
-            carrito.agregarProducto(new RAM("32GB", 350));
-            break;
-        case 3:
-            carrito.agregarProducto(new RAM("64GB", 500));
-            break;
-        default:
-            cout << "Opcion invalida." << endl;
-            break;
-    }
-    break;
-}
-
-case 8: {
-    cout << "==== Monitores ====" << endl;
-    cout << "1. 120Hz ($1,400)" << endl;
-    cout << "2. 144Hz ($2,500)" << endl;
-    cout << "3. 360Hz ($3,000)" << endl;
-    int monitorOpcion;
-    cout << "Ingrese una opcion: ";
-    cin >> monitorOpcion;
-    switch (monitorOpcion) {
-        case 1:
-            carrito.agregarProducto(new Monitor("120Hz", 1400));
-            break;
-        case 2:
-            carrito.agregarProducto(new Monitor("144Hz", 2500));
-            break;
-        case 3:
-            carrito.agregarProducto(new Monitor("360Hz", 3000));
-            break;
-        default:
-            cout << "Opcion invalida." << endl;
-            break;
-    }
-    break;
-}
-
-case 9: {
-    cout << "==== Teclados ====" << endl;
-    cout << "1. Mecánico ($600)" << endl;
-    cout << "2. Membrana ($450)" << endl;
-    cout << "3. Estándar ($200)" << endl;
-    int tecladoOpcion;
-    cout << "Ingrese una opcion: ";
-    cin >> tecladoOpcion;
-    switch (tecladoOpcion) {
-        case 1:
-            carrito.agregarProducto(new Teclado("Mecanico", 600));
-            break;
-        case 2:
-            carrito.agregarProducto(new Teclado("Membrana", 450));
-            break;
-        case 3:
-            carrito.agregarProducto(new Teclado("Estandar", 200));
-            break;
-        default:
-            cout << "Opcion invalida." << endl;
-            break;
-    }
-    break;
-}
-
-case 10: {
-    cout << "==== Mouses ====" << endl;
-    cout << "1. Logitech G502 ($1,200)" << endl;
-    cout << "2. Deathadder Elite ($1,000)" << endl;
-    cout << "3. Cougar ($850)" << endl;
-    int mouseOpcion;
-    cout << "Ingrese una opcion: ";
-    cin >> mouseOpcion;
-    switch (mouseOpcion) {
-        case 1:
-            carrito.agregarProducto(new Mouse("Logitech G502", 1200));
-            break;
-        case 2:
-            carrito.agregarProducto(new Mouse("Deathadder Elite", 1000));
-            break;
-        case 3:
-            carrito.agregarProducto(new Mouse("Cougar", 850));
-            break;
-        default:
-            cout << "Opcion invalida." << endl;
-            break;
-    }
-    break;
-}
-
-            // FInalización de compra
-            case 0:
-                cout << "Compra finalizada." << endl;
+                cout << "===== FACTURA =====" << endl;
+                if (carrito.empty()) {
+                    cout << "El carrito está vacío." << endl;
+                } else {
+                    for (int i = 0; i < carrito.size(); i++) {
+                        cout << i + 1 << ". ";
+                        carrito[i]->mostrarInformacion();
+                    }
+                    cout << "Costo total: $" << costoTotal << endl;
+                    cout << "Gracias por su compra." << endl;
+                    carrito.clear();
+                    costoTotal = 0;
+                }
                 break;
+            }
+            case 4: {
+                cout << "¡Hasta luego!" << endl;
+                return 0;
+            }
             default:
-                cout << "Opcion invalida." << endl;
+                cout << "Opción inválida. Por favor, seleccione una opción válida." << endl;
                 break;
         }
-    } while (opcion != 0); //Mientras los numeros seleccionados sean diferentes a 0 en el menu principal, el codigo seguirá corriendo
-
-    carrito.mostrarCarrito(); //Muestra el resultado final del carrito con el costo total
+    }
 
     return 0;
 }
-
-
-
