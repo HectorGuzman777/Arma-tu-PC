@@ -7,7 +7,7 @@ Mucha gente quiere armar una pc pero priemro quieren saber un costo aproximado p
 En el codigo existe la clase producto y la clase periférico que son las clases padre para las clases hijas que son los componentes de una PC.
 
 
-
+La clase abstracta es la clase producto ya que todas las clases heredan la función mostrarInformacion() que es la que muestra el precio y el nombre de los productos 
 
 
 
