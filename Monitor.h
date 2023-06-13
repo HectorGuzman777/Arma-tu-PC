@@ -24,3 +24,11 @@ public:
 };
 
 #endif
+
+/**
+ * mostrarInformacion() despliega la frecuencia del monitor y su respectivo precio
+ *
+ *
+ * @param
+ * @return string con la frecuencia del monitor y un int con su precio
+ */
