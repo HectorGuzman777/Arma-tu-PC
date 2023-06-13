@@ -24,3 +24,11 @@ public:
 };
 
 #endif
+/*
+**
+ * mostrarInformacion() despliega la capacidad de la fuente de poder y su respectivo precio
+ *
+ *
+ * @param
+ * @return string con la capacidad y un int con su precio
+ */
