@@ -11,12 +11,13 @@
 #ifndef DISIPADOR_H
 #define DISIPADOR_H
 #include <iostream>
-
+//declaración de la clase hija que hereda de la clase producto
 class Disipador : public Producto {
+    //Metodos que tendra el codigo
 public:
-    Disipador(string _nombre, int _precio) : Producto(_nombre, _precio) {}
+    Disipador(string _nombre, int _precio) : Producto(_nombre, _precio) {} //constructor
 
-    void mostrarInformacion() {
+    void mostrarInformacion() { //metodo que despliega el nombre y precio
         cout << "Disipador: " << nombre << endl;
         cout << "Precio: $" << precio << endl;
     }
@@ -24,3 +25,11 @@ public:
 
 
 #endif
+
+/**
+ * mostrarInformacion() despliega el nombre del disipador y su respectivo precio
+ *
+ *
+ * @param
+ * @return string con el tipo de disipador y un int con su precio
+ */
