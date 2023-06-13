@@ -11,12 +11,13 @@
 #ifndef GPU_H
 #define GPU_H
 #include <iostream>
-//
+//Clase hija
 class GPU : public Producto {
 public:
-    GPU(string _nombre, int _precio) : Producto(_nombre, _precio) {}
+    //Metodos de la clase
+    GPU(string _nombre, int _precio) : Producto(_nombre, _precio) {} //constructor
 
-    void mostrarInformacion() {
+    void mostrarInformacion() { //metodo que despliega el tipo de GPU y su precio
         cout << "GPU: " << nombre << endl;
         cout << "Precio: $" << precio << endl;
     }
@@ -24,3 +25,11 @@ public:
 
 
 #endif
+
+/**
+ * mostrarInformacion() despliega el tipo de GPU y su respectivo precio
+ *
+ *
+ * @param
+ * @return string con el tipo de GPU y un int con su precio
+ */
