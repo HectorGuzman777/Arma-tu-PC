@@ -26,3 +26,10 @@ public:
 
 #endif
 
+/**
+ * mostrarInformacion() despliega el tipo de motherboard y su respectivo precio
+ *
+ *
+ * @param
+ * @return string con el tipo de motherboard y un int con su precio
+ */
