@@ -24,3 +24,11 @@ public:
 };
 
 #endif
+
+/**
+ * mostrarInformacion() despliega el tipo de gabinete y su respectivo precio
+ *
+ *
+ * @param
+ * @return string con el tipo de gabinete y un int con su precio
+ */
