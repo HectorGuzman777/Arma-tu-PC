@@ -24,3 +24,11 @@ public:
 };
 
 #endif
+
+/**
+ * mostrarInformacion() despliega el nombre del periferico y su respectivo precio
+ *
+ *
+ * @param
+ * @return string con el tipo de periferico y un int con su precio
+ */
