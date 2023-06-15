@@ -1,3 +1,13 @@
+/*
+ *
+ * Proyecto Arma tu PC
+ * Héctor Gúmaro Guzmán Reyes
+ * A01710706
+ * 13/06/2023
+ * version: final
+ * Clase padre para las clases Monitor, Mouse y Teclado
+ */
+
 #ifndef PERIFERICO_H
 #define PERIFERICO_H
 #include <iostream>
