@@ -23,3 +23,11 @@ public:
 };
 
 #endif
+
+/**
+ * mostrarInformacion() despliega el tipo de mouse y su respectivo precio
+ *
+ *
+ * @param
+ * @return string con el tipo de mouse y un int con su precio
+ */
