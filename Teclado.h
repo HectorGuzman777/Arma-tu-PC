@@ -23,3 +23,11 @@ public:
 };
 
 #endif
+
+/**
+ * mostrarInformacion() despliega el tipo de teclado y su respectivo precio
+ *
+ *
+ * @param
+ * @return string con el tipo de teclado y un int con su precio
+ */
