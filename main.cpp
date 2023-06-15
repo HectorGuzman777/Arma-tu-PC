@@ -1,3 +1,13 @@
+/*
+ *
+ * Proyecto Arma tu PC
+ * Héctor Gúmaro Guzmán Reyes
+ * A01710706
+ * 13/06/2023
+ * version: final
+ * Main
+ */
+
 #include <iostream>
 #include <vector>
 #include <typeinfo>
@@ -22,7 +32,7 @@ int main() {
     vector<Producto*> productos;
     vector<Producto*> carrito;
 
-    // Agregar productos a la lista de productos
+    // lista de productos
     productos.push_back(new GPU("RTX 3060", 10000));
     productos.push_back(new GPU("RTX 3080", 12000));
     productos.push_back(new GPU("RTX 3090", 18000));
@@ -54,7 +64,7 @@ int main() {
     productos.push_back(new Mouse("Deathhadder Elite", 1000));
     productos.push_back(new Mouse("Cougar", 850));
 
-    int opcion;
+    int opcion; //declaración de variables
     int costoTotal = 0;
 
     // Mostrar menú
@@ -68,9 +78,9 @@ int main() {
         cin >> opcion;
 
         switch (opcion) {
-            case 1: {
+            case 1: { //Armar PC
                 int tipoComponente;
-                cout << "Seleccione el tipo de componente:" << endl;
+                cout << "Seleccione el tipo de componente:" << endl; //menu de selección de tipo de componente
                 cout << "1. GPU" << endl;
                 cout << "2. CPU" << endl;
                 cout << "3. Gabinete" << endl;
@@ -85,10 +95,10 @@ int main() {
                 cin >> tipoComponente;
 
                 if (tipoComponente < 1 || tipoComponente > 10) {
-                    cout << "Opción inválida. Por favor, seleccione una opción válida." << endl;
+                    cout << "Opción inválida. Por favor, seleccione una opción válida." << endl; //mensaje de error en caso de escribir un numero que no esté en la opciones
                     break;
                 }
-
+//Despliga otro menu en el que el usuario podra elegir elm tipo de producto deseado de acuerdo al comoponente elegido anteriormente
                 int opcionComponente;
                 cout << "Seleccione el componente:" << endl;
                 for (int i = 0; i < productos.size(); i++) {
@@ -129,7 +139,7 @@ int main() {
                 cin >> opcionComponente;
 
                 if (opcionComponente < 1 || opcionComponente > productos.size()) {
-                    cout << "Opción inválida. Por favor, seleccione una opción válida." << endl;
+                    cout << "Opción inválida. Por favor, seleccione una opción válida." << endl; //mensaje de error en caso de ingresar un numero que no esté en las opciones
                     break;
                 }
 
