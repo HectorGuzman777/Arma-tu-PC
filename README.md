@@ -1,5 +1,6 @@
 # Arma tu PC
 Nombre: Héctor Gúmaro Guzmán Reyes
+
 Matricula: A01710706
 
 # DESCRIPCION DEL PROYECTO Y DIAGRAMA
