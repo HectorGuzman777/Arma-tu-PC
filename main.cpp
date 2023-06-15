@@ -1,17 +1,19 @@
 /*
- *
- * Proyecto Arma tu PC
+ * Proyecto Arma tu PC 
  * Héctor Gúmaro Guzmán Reyes
  * A01710706
- * 13/06/2023
- * version: final
- * Main
+ * 15/06/2023
+ *
+ * Proyecto para la clase de programación orientada a objetos
+ * Es un programa que permite al usuario armar su propia PC y asi 
+ * poder saber el aproximado de cuanto le saldria en total la 
+ * PC de sus sueños
  */
 
-#include <iostream>
-#include <vector>
-#include <typeinfo>
-#include "Producto.h"
+#include <iostream> //imprimir
+#include <vector> //elimina el ultimo elemento de un vector
+#include <typeinfo> //establece orden entre los tipos
+#include "Producto.h" //bibliotecas con los objetos del proyecto
 #include "GPU.h"
 #include "CPU.h"
 #include "Gabinete.h"
@@ -142,7 +144,7 @@ int main() {
                     cout << "Opción inválida. Por favor, seleccione una opción válida." << endl; //mensaje de error en caso de ingresar un numero que no esté en las opciones
                     break;
                 }
-
+//agrega el producto al carrito y va sumando el costo de los productos seleccionados
                 Producto* componenteElegido = productos[opcionComponente - 1];
                 carrito.push_back(componenteElegido);
                 costoTotal += componenteElegido->getPrecio();
@@ -150,41 +152,41 @@ int main() {
                 cout << "El componente ha sido agregado al carrito." << endl;
                 break;
             }
-            case 2: {
+            case 2: { //Consulta el carrito
                 cout << "===== CARRITO =====" << endl;
                 if (carrito.empty()) {
                     cout << "El carrito está vacío." << endl;
                 } else {
                     for (int i = 0; i < carrito.size(); i++) {
                         cout << i + 1 << ". ";
-                        carrito[i]->mostrarInformacion();
+                        carrito[i]->mostrarInformacion(); //muestra la información de los productos almacenados en el carrito
                     }
-                    cout << "Costo total: $" << costoTotal << endl;
+                    cout << "Costo total: $" << costoTotal << endl; //muestra el costo total que se lleva hasta ese momento
                 }
                 break;
             }
-            case 3: {
+            case 3: { //Simulación de haber pagado (Factura)
                 cout << "===== FACTURA =====" << endl;
                 if (carrito.empty()) {
-                    cout << "El carrito está vacío." << endl;
+                    cout << "El carrito está vacío." << endl; //si el carrito esta vacio se despliega el mensaje
                 } else {
                     for (int i = 0; i < carrito.size(); i++) {
                         cout << i + 1 << ". ";
-                        carrito[i]->mostrarInformacion();
+                        carrito[i]->mostrarInformacion(); //se obtiene la información de los productos guardados en el carrito y los imprime
                     }
-                    cout << "Costo total: $" << costoTotal << endl;
+                    cout << "Costo total: $" << costoTotal << endl; //imprime el costo total de la compra
                     cout << "Gracias por su compra." << endl;
                     carrito.clear();
                     costoTotal = 0;
                 }
                 break;
             }
-            case 4: {
+            case 4: { //salir
                 cout << "¡Hasta luego!" << endl;
                 return 0;
             }
             default:
-                cout << "Opción inválida. Por favor, seleccione una opción válida." << endl;
+                cout << "Opción inválida. Por favor, seleccione una opción válida." << endl; //mensaje de error en caso de escribir un numero que no esté en las opciones
                 break;
         }
     }
