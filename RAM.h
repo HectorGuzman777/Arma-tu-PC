@@ -24,3 +24,11 @@ public:
 
 
 #endif
+
+/**
+ * mostrarInformacion() despliega la capacidad de la RAM y su respectivo precio
+ *
+ *
+ * @param
+ * @return string con la capacidad de la RAM y un int con su precio
+ */
