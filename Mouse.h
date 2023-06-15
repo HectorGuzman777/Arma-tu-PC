@@ -14,9 +14,9 @@
 //declaración de la clase hija
 class Mouse : public Periferico {
 public:
-    Mouse(string _nombre, int _precio) : Periferico(_nombre, _precio) {}
+    Mouse(string _nombre, int _precio) : Periferico(_nombre, _precio) {} //constructor
 
-    void mostrarInformacion() {
+    void mostrarInformacion() { //metodo que despliega el tipo de mouse y su precio
         cout << "Mouse: " << nombre << endl;
         cout << "Precio: $" << precio << endl;
     }
