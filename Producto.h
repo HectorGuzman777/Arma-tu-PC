@@ -30,5 +30,12 @@ public:
     }
 };
 
+/**
+ * mostrarInformacion() desplegará el nombre y el precio de cada producto segun sea su tipo
+ *
+ * @param
+ * @return string con el tipo de producto y un int con su respectivo precio
+ */
+
 
 #endif
